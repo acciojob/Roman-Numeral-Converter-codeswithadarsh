@@ -8,9 +8,16 @@ function convertToRoman(num) {
       5:['V', 5], 
       6:['I', 1]
     };
+   let romanNumeral = "";
 
-  //your code here
+  for (let key in obj) {
+    while (num >= obj[key][1]) {
+      romanNumeral += obj[key][0];
+      num -= obj[key][1];
+    }
+  }
 
+  return romanNumeral;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
